@@ -18,7 +18,7 @@
 本工具生成的数据不依赖特定的渲染管线。它把平滑法线和 AO 烘焙为标准顶点数据，支持 URP、HDRP、Built-in 以及任何自定义 SRP。
 
 新增（用于SRP管线LOD）：
-多LOD生成并且一键烘培
+通过Blender 的 Decimate（精简修改器）做多LOD生成并且一键烘培
 ![LOD](https://github.com/user-attachments/assets/7a9592e9-8ae6-4958-b270-5860990709ad)
 
 
