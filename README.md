@@ -1,5 +1,5 @@
 # Blender-SRP-Helper
-平滑法线用于描边以及cycles烘培ao
+平滑法线用于描边以及cycles烘培ao+自动生成不同层级LOD模型
 
 （图左：无法线平滑/烘培ao  图右：有）
 
@@ -16,3 +16,10 @@
 如果硬表面模型过多就用后期处理sobel算子深度差进行描边如我提交的作品集中的ue风格化部分有实现这个描边
 
 本工具生成的数据不依赖特定的渲染管线。它把平滑法线和 AO 烘焙为标准顶点数据，支持 URP、HDRP、Built-in 以及任何自定义 SRP。
+
+新增（用于SRP管线LOD）：
+多LOD生成并且一键烘培
+![LOD](https://github.com/user-attachments/assets/7a9592e9-8ae6-4958-b270-5860990709ad)
+
+
+
