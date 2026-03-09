@@ -1,5 +1,5 @@
 # Blender-SRP-Helper
-平滑法线用于描边以及cycles烘培ao+自动生成不同层级LOD模型
+平滑法线用于描边以及cycles烘培ao+根据权重绘制自动生成不同层级LOD模型
 
 （图左：无法线平滑/烘培ao  图右：有）
 
