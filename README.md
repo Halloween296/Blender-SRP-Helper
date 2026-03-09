@@ -19,6 +19,7 @@
 
 新增（用于SRP管线LOD）：
 通过Blender 的 Decimate（精简修改器）做多LOD生成并且一键烘培
+把烘焙数据（法线+AO）的逻辑转移到一个独立的通用函数，在生成每一级 LOD 减面修改之后，我们马上对这个低模调用一次烘焙函数。
 ![LOD](https://github.com/user-attachments/assets/7a9592e9-8ae6-4958-b270-5860990709ad)
 
 
