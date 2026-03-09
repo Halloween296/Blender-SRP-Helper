@@ -111,16 +111,15 @@ class Mesh_LODs(bpy.types.Operator):
           if not b_name.endswith("_LOD0"):
                obj.name = b_name + "_LOD0"
                b_name = b_name.replace("_LOD0","")
-          bpy.ops.object.select_all(action='DESELECT')
+          #bpy.ops.object.select_all(action='DESELECT')
           weight_group_name = "维持细节"
           has_weight = weight_group_name in obj.vertex_groups
 
-          #根据权重生成低模后再烘培
-          g_lods = []
+          #仅对LOD0烘焙
+          bake_on_obj(context,obj)
 
           for i in range(1,lod_count + 1):
                bpy.ops.object.select_all(action='DESELECT')
-
 
                new_obj = obj.copy()
                new_obj.data = obj.data.copy()
@@ -136,21 +135,24 @@ class Mesh_LODs(bpy.types.Operator):
                
                context.view_layer.objects.active = new_obj
                new_obj.select_set(True)
-               bpy.ops.object.modifier_apply(modifier=mod.name)
-               g_lods.append(new_obj)
+               bpy.ops.object.modifier_apply(modifier=mod.name)               
           
+               mesh = new_obj.data
+               aname = "Pack Data"
 
-          bake_all_models = [obj] + g_lods
-
-          for obj_bake in bake_all_models:
-               bake_on_obj(context,obj_bake)
+               #删除顶点色
+               if aname in mesh.attributes:
+                    mesh.attributes.remove(mesh.attributes[aname])
+               color = mesh.attributes.new(name=aname, type='FLOAT_COLOR', domain='CORNER')
+               for loop_idx in range(len(mesh.loops)):
+                         color.data[loop_idx].color = (0.5, 0.5, 0.5, 1.0)
 
           bpy.ops.object.select_all(action='DESELECT')
           context.view_layer.objects.active = obj
           obj.select_set(True)
-
-          self.report({'INFO'}, f"成功生成 {lod_count} 级 LOD并且全部烘培完成")
+          self.report({'INFO'}, f"只烘培LOD0，低模数据已清理")
           return {'FINISHED'}
+
 
 
 #ui面板
