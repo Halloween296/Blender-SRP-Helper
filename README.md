@@ -4,6 +4,7 @@
 （图左：无法线平滑/烘培ao  图右：有）
 
 <img width="527" height="315" alt="屏幕截图 2026-03-23 211419" src="https://github.com/user-attachments/assets/762c4455-57ea-48a0-9b37-6e3a90cd5b93" />
+<img width="572" height="302" alt="屏幕截图 2026-03-05 153125" src="https://github.com/user-attachments/assets/64f8f571-64a2-4e6b-b1af-623c2d2f97a0" />
 
 
 （因为unity默认只读一层顶点色所以平滑法线由[-1,1]转[0,1]烘培到rgb通道，而ao放在alpha通道）
