@@ -3,9 +3,8 @@
 
 （图左：无法线平滑/烘培ao  图右：有）
 
-因为我的描边逻辑是受光照影响根据dot结果背光线条粗反之细所以效果是这样但还是看出来右边更加连续
+<img width="527" height="315" alt="屏幕截图 2026-03-23 211419" src="https://github.com/user-attachments/assets/762c4455-57ea-48a0-9b37-6e3a90cd5b93" />
 
-<img width="655" height="361" alt="屏幕截图 2026-03-05 153606" src="https://github.com/user-attachments/assets/084f49bf-4d8a-4139-af56-d456917d576f" />
 
 （因为unity默认只读一层顶点色所以平滑法线由[-1,1]转[0,1]烘培到rgb通道，而ao放在alpha通道）
 
